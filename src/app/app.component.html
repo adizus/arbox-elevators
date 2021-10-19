@@ -1,0 +1,64 @@
+<div>
+  <h2> my building</h2>
+
+
+  <table mat-table [dataSource]="buildingFloors" class="center">
+
+
+
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element" style="width: 100px; padding: 0"> {{element.name}} </td>
+    </ng-container>
+    <ng-container  matColumnDef="el1">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"></td>
+    </ng-container>
+    <ng-container matColumnDef="el2">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"></td>
+    </ng-container>
+    <ng-container matColumnDef="el3">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"></td>
+    </ng-container>
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <app-call-button [floor]="element" ></app-call-button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+  <div *ngFor="let elevator of elevators; index as i">
+    <app-elevator [elevatorObj]="elevator"> </app-elevator>
+    <!--<app-elevator ></app-elevator>-->
+  </div>
+
+
+  <div>
+    <app-open-close></app-open-close>
+  </div>
+
+  <!--
+  build a table.
+  each row will have {elevator} num of squares
+  a floor number before
+  and a button after
+
+  so maybe {elevator + 2} num of squares
+
+
+
+
+
+
+  -->
+
+
+</div>

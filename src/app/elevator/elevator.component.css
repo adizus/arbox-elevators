@@ -1,0 +1,16 @@
+img {
+  width: 30px;
+}
+div { position: absolute}
+
+.AVAILABLE {
+  color: black;
+
+}
+.OCCUPIED {
+  color: red;
+
+}
+.ARRIVED {
+  color: green;
+}
